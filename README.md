@@ -21,8 +21,11 @@ Firstly install Git(you can watch a tutorial on youtube.). Once it's installed, 
 #--
 
 cd $HOME\Desktop
+
 git clone https://github.com/Matxe24/tesint
+
 cd tesint
+
 py py_conf.py
 
 #--
