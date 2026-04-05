@@ -19,6 +19,7 @@ Open the python file and on top of everything write: #!/usr/bin/python3. Then re
 Firstly install Git(you can watch a tutorial on youtube.). Once it's installed, open Powershell and run this command:
 
 #--
+
 cd $HOME\Desktop
 git clone https://github.com/Matxe24/tesint
 cd tesint
