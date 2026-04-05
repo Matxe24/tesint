@@ -11,7 +11,7 @@ if os.name == 'nt':
 else:
     PATH = input("Enter the path in which you want to put Tesint in: ")
     if os.access(PATH, os.W_OK):
-        sub.run("pip -r install requirements.txt")
+        sub.run("pip -r install requirements.txt", shell = True)
         sub.run(["mv", "tesint.py", PATH])
         newp = f'{PATH}/tesint.py'
         sub.run('python3', newp)
