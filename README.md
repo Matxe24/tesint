@@ -22,7 +22,7 @@ After it's finished cloning you don't need to run the setup file, instead, go in
 
 # MACOS
 
-I really don't know anything about MacOS and i haven't got a device to test any script on it, but by following the linux or the windows installation you can try to figure it out by yourself, but take care that some steps might be different. If i ever get in touch with a macbook i will try to make an installation process for it.
+MacOS is currently untested, but it should work similarly to linux. Tips are welcome.
 
 # UPDATING
 
