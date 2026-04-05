@@ -16,7 +16,7 @@ Open the python file and on top of everything write: #!/usr/bin/python3. Then re
 
 # WINDOWS
 
-Firstly install Git(you can watch a tutorial on youtube.). Once it's installed, open Powershell and run this command:
+Firstly install Git(you can watch a tutorial on youtube.). Once it's installed, open Powershell and run this command(from the first #-- all over to the last #--:
 
 #--
 
