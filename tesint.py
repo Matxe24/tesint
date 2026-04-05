@@ -351,59 +351,47 @@ while True:
 
         def update():
             CURRENT_VERSION = "0.1.0"
-
             PASTEBIN_URL = "https://pastebin.com/raw/HbaEe6BP"
-
             REPO_URL = "https://github.com/Matxe24/tesint"
 
+            try:
+                response = requests.get(PASTEBIN_URL, timeout=5)
+                latest_version = response.text.strip()
 
-            def check_for_updates():
-                try:
-                    response = requests.get(PASTEBIN_URL, timeout=5)
-                    latest_version = response.text.strip()
+                if latest_version != CURRENT_VERSION:
+                    print(f"\n🔔 New update available! Current: {CURRENT_VERSION} → Latest: {latest_version}")
+                    choice = input("Do you want to download and install the new version? (Y/n): ").strip().lower()
 
-                    if latest_version != CURRENT_VERSION:
-                        print(f"\n🔔 New update avaible! Current: {CURRENT_VERSION} → Latest: {latest_version}")
-                        choice = input("Download the new update? (Y/n): ").strip().lower()
-                        if choice in ["y"]:
-                            CLONE_DIR = input("📂 Directory(temporary) to build the file: ").strip()
-                            perform_update(CLONE_DIR)
-                        else:
-                            clear()
-                            banner()
-                            terminal(username)
+                    if choice in ["y", ""]:
+                        clone_dir = f"tesint_{latest_version}"
+                        if os.path.exists(clone_dir):
+                            print(f"Folder '{clone_dir}' already exists. Removing it first...")
+                            try:
+                                sub.run(["rm", "-rf", clone_dir], check=True)
+                            except Exception:
+                                print("Could not remove old folder, please delete manually.")
+                                return
+
+                        print(f"Cloning repository into '{clone_dir}'...")
+                        sub.run(["git", "clone", REPO_URL, clone_dir], check=True)
+
+                        setup_path = os.path.join(clone_dir, "setup.py")
+                        print("Running setup.py...")
+                        try:
+                            sub.run(["python3", setup_path], check=True)
+                        except Exception:
+                            print(f"Failed to run setup.py in {clone_dir}. Please run it manually.")
                     else:
                         clear()
                         banner()
                         terminal(username)
-                except Exception as e:
-                    print(f"\n⚠️ Could not check for updates: {e}")
-                    input("Press enter to continue...")
-                    clear()
-                    banner()
-                    terminal(username)
-    
-            def perform_update(CLONE_DIR):
-                try:
-                    sub.run(["git", "clone", REPO_URL, CLONE_DIR], check=True)
-
-                    new_script_path = os.path.join(CLONE_DIR, "setup.py")
-                    print(" Updating...")
-                    try:
-                        sub.run(f'cd {CLONE_DIR} && python3 setup.py', shell=True, check=True)
-                        exit()
-                    except Exception:
-                        print("Failed, try to run the setup.py manually.")
-                        exit()
-
-                except Exception as e:
-                    print(f"\n❌ Update failed: {e}")
-                    input("Press enter to continue...")
+                else:
                     clear()
                     banner()
                     terminal(username)
 
-            check_for_updates()
+            except Exception as e:
+                print(f"\n⚠️ Could not check for updates: {e}")
 
 
         def cookies():
