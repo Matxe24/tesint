@@ -17,8 +17,16 @@ Open the python file and on top of everything write: #!/usr/bin/python3. Then re
 # WINDOWS
 
 Firstly install Git(you can watch a tutorial on youtube.). Once it's installed, open Powershell and run this command:
-'git clone https://github.com/Matxe24/tesint'.
-After it's finished cloning you don't need to run the setup file, instead, go in the folder you just cloned and find the py_conf.py file and run it. After it's finished, just go back in the folder, find 'tesint.py' and move it to any folder you want, or even in your desktop. To run it, just double click on it.
+
+#--
+cd $HOME\Desktop
+git clone https://github.com/Matxe24/tesint
+cd tesint
+py py_conf.py
+
+#--
+
+After it's finished cloning you don't need to run the setup file, instead, go in your desktop and find the folder 'tesint'. Open it and move tesint.py wherever you want. To run it, just double click on it.
 
 # MACOS
 
