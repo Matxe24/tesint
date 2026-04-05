@@ -1,2 +1,47 @@
-# tesint
-Osint tool aiming to become the BEST open source tool before 2030. Check out README for more info!
+# TESINT
+Tesint is an open source osint tool that aims to be the best one before 2030. It has various modules, even though it's not even close to finished yet.
+It's a solo project and i'm constantly working on it, trying to give y'all a good experience and possibly walk more and more people into the world of OSINT(crypto donations will be open as soon as i finish the whole tool, because i'm not here begging for money. The way you can support me is by using this tool, it makes me so happy knowing someone uses it).
+
+We are going to start off with the installation process on various platforms, how to update on various platforms and what each module does.
+
+DISCLAIMER: This tool REQUIRES python and git to be installed on your device.
+
+RUNNING TIP: Since this tool has a big ASCII banner at the start, i reccomend using fullscreen or you will have trouble reading modules.
+
+# LINUX
+
+Open a terminal and clone the repository by typing 'git clone https://github.com/Matxe24/tesint'. After that, go in that directory by running 'cd tesint' and run the setup.py by typing 'python3 setup.py'. It will install the required modules and then move out the tool to a directory that you want.
+If you want to open the tool each time you type 'tesint' in your terminal, no matter what directory you're in, then do this simple process:
+Open the python file and on top of everything write: #!/usr/bin/python3. Then rename the file 'tesint' removing the .py extention. After that, run this command:'chmod +x tesint'(if it gives you an error try using sudo with it, doing 'sudo chmod +x tesint' that will ask you for your password to continue). Then just run 'sudo mv tesint /usr/local/bin'(it will ask for the sudo password since it's a privileged command, unless you're using root) and your installation is complete, just close and reopen your terminal and then whenever you type in 'tesint' it will open.
+
+# WINDOWS
+
+Firstly install Git(you can watch a tutorial on youtube.). Once it's installed, open Powershell and run this command:
+'git clone https://github.com/Matxe24/tesint'.
+After it's finished cloning you don't need to run the setup file, instead, go in the folder you just cloned and find the py_conf.py file and run it. After it's finished, just go back in the folder, find 'tesint.py' and move it to any folder you want, or even in your desktop. To run it, just double click on it.
+
+# MACOS
+
+I really don't know anything about MacOS and i haven't got a device to test any script on it, but by following the linux or the windows installation you can try to figure it out by yourself, but take care that some steps might be different. If i ever get in touch with a macbook i will try to make an installation process for it.
+
+# UPDATING
+
+When an update occurs the tool warns you about it, here is how to update on different platforms.
+
+# LINUX
+
+On linux you really don't have to do anything, because the tool will give you the option to update: if you select yes, the update will be automated, you just have to enter the path in which you want the tool to be in. If you want the automatic tesint start when you enter "tesint" in the terminal, just do what you did in the installation again.
+
+# WINDOWS
+
+When the tool gives you the option DON'T SELECT YES, instead, delete the old tesint folder and files and do the installation process all over again.
+
+# MacOS
+
+Same thing as before.
+
+# ALL THE MODULES
+
+Right now there are so few modules, so i will not be covering up to them. When there will be a lot of modules i will explain how each works.
+
+# ENJOY THE TOOL!
