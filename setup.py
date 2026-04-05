@@ -1,5 +1,6 @@
 import os
 import subprocess as sub
+import sys
 
 
 if os.name == 'nt':
@@ -12,9 +13,9 @@ else:
     PATH = input("Enter the path in which you want to put Tesint in: ")
     if os.access(PATH, os.W_OK):
         try:
-            sub.run("pip install -r requirements.txt", shell = True)
-        except any:
-            sub.run("pip install -r requirements.txt --break-system-packages", shell = True)
+            sub.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"], check=True)
+        except Exception:
+            sub.run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt", "--break-system-packages"], check=True)
         sub.run(["mv", "tesint.py", PATH])
         newp = f'{PATH}/tesint.py'
         sub.run('python3', newp)
